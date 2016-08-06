@@ -29,6 +29,7 @@ class AuthController extends Controller
      * @var string
      */
     protected $redirectTo = '/';
+    protected $username   = 'login';
 
     /**
      * Create a new authentication controller instance.
@@ -50,7 +51,7 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'login' => 'required|max:255',
             'password' => 'required|min:6|confirmed',
         ]);
     }
@@ -65,8 +66,21 @@ class AuthController extends Controller
     {
         return User::create([
             'name' => $data['name'],
-            'email' => $data['email'],
+            'login' => $data['login'],
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    /**
+     * Handle an authentication attempt.
+     *
+     * @return Response
+     */
+    public function authenticate()
+    {
+        if (Auth::attempt(['login' => $login, 'password' => $password])) {
+            // Authentication passed...
+            return redirect()->intended('/');
+        }
+    }    
 }

@@ -94,8 +94,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'tags' => [
+            'tag_requires_comma' => 'Tags must be divided by commas',
         ],
     ],
 

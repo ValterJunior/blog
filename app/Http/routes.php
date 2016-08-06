@@ -11,10 +11,8 @@
 |
 */
 
-// Route::get('/', function () {
-
-//     return view('welcome');
-
-// });
+Route::auth();
 
 Route::get('/', 'HomeController@index');
+
+Route::resource('posts', 'PostsController');
