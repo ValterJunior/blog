@@ -23,4 +23,19 @@ class Post extends Moloquent
 		return $this->belongsToMany(Tag::class);
 	}
 
+	public function comments(){
+		return $this->hasMany(Comment::class);
+	}
+
+    // Deleting related tables
+    protected static function boot() {
+    
+        parent::boot();
+
+        static::deleting( function($post) {
+	         $post->comments()->delete();
+        });
+
+    }	
+
 }

@@ -35,7 +35,7 @@ class PostsController extends Controller
 	/**
 	 * Show the form for creating a new resource.
 	 *
-	 * @return Response
+	 * @return View
 	 */
 	public function create()
 	{
@@ -64,7 +64,7 @@ class PostsController extends Controller
 	 * Show the form for editing the specified resource.
 	 *
 	 * @param  string $id
-	 * @return Response
+	 * @return View
 	 */
 	public function edit(string $id)
 	{
@@ -105,13 +105,18 @@ class PostsController extends Controller
 	 * Display the specified resource.
 	 *
 	 * @param  string $id
-	 * @return Response
+	 * @return View
 	 */
 	public function show(string $id)
 	{
 		$post = Post::find($id);
 
-		return view('posts.show', compact('post'));
+		if( $post->comments() ){
+			return view('posts.show', compact('post'));
+		}else{
+			return 'Teste!';
+		}
+
 	}
 
 	/**

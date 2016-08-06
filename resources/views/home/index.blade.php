@@ -50,7 +50,7 @@
 		@endforeach
 
 	@else
-		<h4>No Posts found</h4>
+		<h4>There are no Posts yet</h4>
 		@if(!Auth::guest())
 			@include('home.partials._create_link', [ "buttonText" => "Start your first Post"])
 		@endif

@@ -27,6 +27,8 @@
 		<p class="text-justify">{{ $post->content }}</p>
 	</div>
 
+	@include('posts.partials._comments_box', ["post" => $post])
+
 	{!! Form::open( [ 'method' => 'DELETE', 'action' => ['PostsController@destroy', $post->_id] ] ) !!}
 
 		<div class="modal fade" id="removePost" tabindex="-1" role="dialog" aria-labelledby="removePostLabel">
