@@ -9,6 +9,8 @@ use App\Models\{Post, Tag};
 class HomeController extends Controller
 {
 
+    protected $max_paginate = 5;
+
     /**
      * Show the application dashboard.
      * @param  Request
@@ -50,7 +52,7 @@ class HomeController extends Controller
      * @return \App\Models\Post
      */
     private function getAllPosts(){
-        return Post::orderBy( 'created_at', 'desc' )->paginate(5);
+        return Post::orderBy( 'created_at', 'desc' )->paginate($this->max_paginate);
     }
 
     /**
@@ -61,7 +63,7 @@ class HomeController extends Controller
 
         $posts = Tag::find($tagId)
                     ->posts()
-                    ->orderBy('created_at', 'desc')->paginate(5);
+                    ->orderBy('created_at', 'desc')->paginate($this->max_paginate);
 
         return $posts;
 
@@ -77,16 +79,9 @@ class HomeController extends Controller
         $posts = Post::where( 'month', $month )
                      ->where('year', $year)
                      ->orderBy('created_at', 'desc')
-                     ->paginate(5);
+                     ->paginate($this->max_paginate);
 
         return $posts;
-
-        // Improvising !
-        // $posts = $this->getAllPosts();
-
-        // return $posts->filter( function($post) use($month, $year) {
-        //     return ($post->month == $month && $post->year == $year );
-        // });
 
     }
 
@@ -99,7 +94,7 @@ class HomeController extends Controller
         $posts = Post::where( 'title', 'like', '%' . $search . '%' )
                     ->orWhere( 'content', 'like', '%' . $search . '%' )
                     ->orderBy('created_at', 'desc')
-                    ->paginate(5);
+                    ->paginate($this->max_paginate);
 
         return $posts;
 
