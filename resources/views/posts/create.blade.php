@@ -4,7 +4,7 @@
 
 	<h2>Create New Post</h2>
 		
-	@include('partials._button_back', ["addAdminButton" => false, "link" => "/"])
+	@include('posts.partials._buttons_post', ["addAdminButton" => false, "link" => "/"])
 
 	{!!  Form::open( [ 'action' => 'PostsController@store' ] ) !!}
 		@include('posts.partials._form', ['submit_text' => 'Create'])

@@ -36,8 +36,8 @@ class Post extends Moloquent
  		// Saving the month/year data to optimize searches!
  		static::creating(function ($post) {
             
-            $post->month = date('n');
-            $post->year  = date('Y');
+            $post->month = date('n', strtotime($post->created_at));
+            $post->year  = date('Y', strtotime($post->created_at));
 
         });        
 

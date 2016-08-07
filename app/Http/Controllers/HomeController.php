@@ -5,20 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Models\{Post, Tag};
-use DB;
-use Log;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        // $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -26,30 +15,24 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index( Request $request )
-    // public function index()
     {
-        $value = $request->input('search');
         $type  = $request->input('type');
+        $value = $request->input('search');
 
         if( $value && strlen($value) > 0 ){
         
             if( $type === 't' ){
 
-                // $value = Tag::where( 'name', $value )->first();
-
-                $posts = Posts::with(['tags' => function($query) use ($value) {
-                    $query->where('tags.name', $value);
-                }])->get();
-
+                $posts = $this->getPostsByTag($value);
 
             }elseif( $type === 'a' ){
 
                 $year  = $request->input('year');
-                $posts = Post::where( 'month', $value )->where('year', $aux)->get();
+                $posts = $this->getPostsByDate( $value, $year );
 
             }elseif( $type === 's' ){
 
-                $posts = Post::where( 'title', 'like', '%' . $value . '%' )->orWhere( 'content', '%' . $value . '%' )->get();
+                $posts = $this->getPostsBySearch( $value );
 
             }else{
                 $posts = $this->getAllPosts();
@@ -62,8 +45,73 @@ class HomeController extends Controller
         return view( 'home.index', compact('posts') );
     }
 
+    /**
+     * Retrieving all posts ordering by created_at
+     * @return \App\Models\Post
+     */
     private function getAllPosts(){
-        return Post::orderBy( 'created_at', 'desc' )->get();
+        return Post::orderBy( 'created_at', 'desc' )->paginate(5);
+    }
+
+    /**
+     * Retrieving all posts filtering by tag id
+     * @return \App\Models\Post
+     */
+    private function getPostsByTag( string $tagId ){
+
+        // For any freaking reason this relationship is not working, at all! 
+        // $posts = Tag::find($tagId)
+        //             ->posts()
+        //             ->orderBy('created_at', 'desc')->get();
+
+        // Improvising!
+        $posts = $this->getAllPosts();
+
+        return $posts->filter( function($post) use($tagId){
+
+            $list = $post->tags()->lists('_id')->toArray();
+            // Log::info($list);
+
+            return isset($list) && in_array($tagId, $list);
+
+        });
+
+    }
+
+    /**
+     * Retrieving all posts filtering by mont/year,  ordering by created_at
+     * @return \App\Models\Post
+     */
+    private function getPostsByDate( int $month, int $year ){
+
+        // For any freaking reason this relationship is not working, at all! 
+        // $posts = Post::where( 'month', $month )
+        //              ->where('year', $year)
+        //              ->orderBy('created_at', 'desc')
+        //              ->get();
+
+        // Improvising !
+        $posts = $this->getAllPosts();
+
+        return $posts->filter( function($post) use($month, $year) {
+            return ($post->month == $month && $post->year == $year );
+        });
+
+    }
+
+    /**
+     * Retrieving all posts filtering by text(search),  ordering by created_at
+     * @return \App\Models\Post
+     */
+    private function getPostsBySearch( string $search ){
+
+        $posts = Post::where( 'title', 'like', '%' . $search . '%' )
+                    ->orWhere( 'content', 'like', '%' . $search . '%' )
+                    ->orderBy('created_at', 'desc')
+                    ->get();
+
+        return $posts;
+
     }
 
 }

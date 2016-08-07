@@ -2,7 +2,7 @@
 
 @section('content')
 	
-	@include('partials._button_back', [ "addAdminButton" => !Auth::guest(), "link" => "/", "post" => $post, "modalDeleteId" => "removePost"])
+	@include('posts.partials._buttons_post', [ "addAdminButton" => !Auth::guest(), "link" => action('HomeController@index'), "post" => $post, "modalDeleteId" => "removePost"])
 
 	<div class="row">
 
@@ -24,39 +24,10 @@
 	</div>
 
 	<div class="row">
-		<p class="text-justify">{{ $post->content }}</p>
+		<p class="text-justify">{!! nl2br(e($post->content)) !!}</p>
 	</div>
 
 	@include('posts.partials._comments_box', ["post" => $post])
-
-	{!! Form::open( [ 'method' => 'DELETE', 'action' => ['PostsController@destroy', $post->_id] ] ) !!}
-
-		<div class="modal fade" id="removePost" tabindex="-1" role="dialog" aria-labelledby="removePostLabel">
-
-		  <div class="modal-dialog" role="document">
-
-		    <div class="modal-content">
-
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <h4 class="modal-title" id="removePostLabel">Delete Post</h4>
-		      </div>
-
-		      <div class="modal-body">
-		        <p>Do you really want to remove this Post?</p>
-		      </div>
-
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        <button type="submit" class="btn btn-danger">Delete</button>
-		      </div>
-
-		    </div>
-
-		  </div>
-
-		</div>
-
-	{!! Form::close() !!}
+	@include('posts.partials._modal_delete', ["post_id" => $post->id])
 
 @endsection

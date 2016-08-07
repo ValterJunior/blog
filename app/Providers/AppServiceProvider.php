@@ -15,14 +15,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $tags     = $this->getMenuTags();
-        $archives = $this->getMenuArchives();
+        $tags       = $this->getMenuTags();
+        $archives   = $this->getMenuArchives();
 
-        view()->share('_menu_tags', $tags);
+
+        view()->share('_menu_tags'    , $tags);
         view()->share('_menu_archives', $archives);
 
         Validator::extend('tag_requires_comma', function( $attribute, $value, $parameters, $validator ){
-            return strpos($value, ',');
+            return strpos($value, ',') || ( !strpos(trim($value), ' ' ) );
         });
 
     }
@@ -37,14 +38,28 @@ class AppServiceProvider extends ServiceProvider
         //
     }
 
+    /**
+     * Retrieve a list of tags ordered by name
+     *
+     * @return App\Model\Tag
+    */
     private function getMenuTags(){
 
         return Tag::orderBy('name')->get();
 
     }
 
+    /**
+    * Retrieve a list of headers based in month/year post information
+    *
+    * @return App\Models\Post
+    */
     private function getMenuArchives(){
-        return Post::orderBy('created_at', 'desc')->groupBy( array( 'year', 'month' ) )->get();
+        return Post::orderBy('created_at', 'desc')
+                   ->groupBy( array( 'year', 'month' ) )
+                   ->orderBy( 'year', 'desc' )
+                   ->orderBy('month', 'desc')
+                   ->get();
     }
 
 }

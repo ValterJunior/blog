@@ -71,6 +71,10 @@ class PostsController extends Controller
 		$post     = Post::find($id);
 		$tagsList = array();
 
+		if(!$post){
+			abort(404);
+		}
+
 		foreach( $post->tags as $tag ){
 			$tagsList[] = $tag->name;			
 		}
@@ -110,6 +114,10 @@ class PostsController extends Controller
 	public function show(string $id)
 	{
 		$post = Post::find($id);
+
+		if( !$post ){
+			abort(404);
+		}
 
 		if( $post->comments() ){
 			return view('posts.show', compact('post'));
@@ -191,7 +199,7 @@ class PostsController extends Controller
 
 		$listTags = explode( ',', $request->input('tags') );
 
-		$post->tags()->sync([]);
+		//$post->tags()->sync([]);
 
 		foreach( $listTags as $name ){
 			

@@ -1,3 +1,13 @@
+@if (Session::has('comment_msg'))
+    <div class="flash alert-info">
+    </div>
+    <div class="alert alert-success" role="alert">
+      <span class="glyphicon glyphicon glyphicon-ok" aria-hidden="true"></span>
+      <span class="sr-only">Message:</span>
+        {{ Session::get('comment_msg') }}
+    </div>
+@endif
+
 <div class="detailBox">
 
     <div class="titleBox">

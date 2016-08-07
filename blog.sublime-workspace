@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"font",
+				"font-size"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"belong",
+				"belongsToMany"
+			],
+			[
+				"on",
+				"owner"
+			],
+			[
 				"select",
 				"select2-selection"
 			]
@@ -11,6 +31,86 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "resources/views/layouts/menu_app.blade.php",
+			"settings":
+			{
+				"buffer_size": 1630,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/HomeController.php",
+			"settings":
+			{
+				"buffer_size": 1618,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Providers/AppServiceProvider.php",
+			"settings":
+			{
+				"buffer_size": 1012,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/routes.php",
+			"settings":
+			{
+				"buffer_size": 607,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Models/Post.php",
+			"settings":
+			{
+				"buffer_size": 1028,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Models/Tag.php",
+			"settings":
+			{
+				"buffer_size": 229,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/home/index.blade.php",
+			"settings":
+			{
+				"buffer_size": 1565,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/layouts/main.blade.php",
+			"settings":
+			{
+				"buffer_size": 2256,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Valtinho/Desktop/mongodb.txt",
+			"settings":
+			{
+				"buffer_size": 25,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/css/dashboard.css",
+			"settings":
+			{
+				"buffer_size": 1824,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -36,8 +136,70 @@
 	},
 	"file_history":
 	[
-		"/C/Users/Valtinho/Homestead/src/stubs/Homestead.yaml",
+		"/C/Users/Valtinho/Projects/blog/storage/logs/laravel.log",
+		"/C/Users/Valtinho/Projects/blog/app/Models/Tag.php",
+		"/C/Users/Valtinho/Projects/blog/app/Models/Post.php",
+		"/C/Users/Valtinho/Projects/blog/resources/views/home/index.blade.php",
+		"/C/Users/Valtinho/Projects/blog/resources/views/layouts/main.blade.php",
+		"/C/Users/Valtinho/Projects/blog/resources/assets/sass/app.scss",
+		"/C/Users/Valtinho/Projects/blog/resources/views/layouts/app.blade.php",
+		"/C/Users/Valtinho/Projects/blog/public/css/dashboard.css",
+		"/C/Users/Valtinho/Projects/blog/app/Providers/AppServiceProvider.php",
+		"/C/Users/Valtinho/Projects/blog/database/migrations/2016_08_06_011216_create_posts_and_tags_tables.php",
+		"/C/Users/Valtinho/Projects/blog/app/Http/Controllers/BaseController.php",
+		"/C/Users/Valtinho/Projects/blog/resources/views/auth/login.blade.php",
+		"/C/Users/Valtinho/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Valtinho/Projects/blog/resources/views/posts/show.blade.php",
+		"/C/Users/Valtinho/Projects/blog/resources/views/posts/partials/_comments_box.blade.php",
+		"/C/Users/Valtinho/Projects/blog/app/Http/routes.php",
+		"/C/Users/Valtinho/Projects/blog/app/Models/Comment.php",
+		"/C/Users/Valtinho/Projects/blog/app/Http/Controllers/CommentsController.php",
+		"/C/Users/Valtinho/Projects/blog/app/Http/Controllers/PostsController.php",
+		"/C/Users/Valtinho/Projects/blog/database/migrations/2016_08_06_220403_create_comments_table.php",
+		"/C/Users/Valtinho/Projects/blog/resources/views/partials/_tags.blade.php",
+		"/C/Users/Valtinho/Projects/blog/resources/views/home/partials/_create_link.blade.php",
+		"/C/Users/Valtinho/Projects/blog/resources/views/posts/create.blade.php",
+		"/C/Users/Valtinho/Projects/blog/resources/views/posts/edit.blade.php",
+		"/C/Users/Valtinho/Projects/blog/resources/views/partials/_button_back.blade.php",
+		"/C/Users/Valtinho/Projects/blog/resources/views/posts/partials/_form.blade.php",
+		"/C/Users/Valtinho/Projects/blog/app/Http/Controllers/HomeController.php",
+		"/C/Users/Valtinho/Projects/blog/config/app.php",
+		"/C/Users/Valtinho/Projects/blog/resources/lang/en/validation.php",
+		"/C/Users/Valtinho/Projects/blog/resources/views/auth/register.blade.php",
+		"/C/Users/Valtinho/Projects/blog/database/seeds/DatabaseSeeder.php",
+		"/C/Users/Valtinho/Projects/blog/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/C/Users/Valtinho/Projects/blog/app/Models/User.php",
+		"/C/Users/Valtinho/Projects/blog/database/seeds/UsersTableSeeder.php",
+		"/C/Users/Valtinho/Projects/blog/resources/views/layouts/app_login.blade.php",
+		"/C/Users/Valtinho/Projects/blog/resources/views/layouts/nomenu_app.blade.php",
+		"/C/Users/Valtinho/Projects/blog/resources/views/layouts/menu_app.blade.php",
+		"/C/Users/Valtinho/Projects/blog/database/migrations/2016_08_05_164816_change_init_fields_users_table.php",
+		"/C/Users/Valtinho/Projects/blog/app/Http/Middleware/Authenticate.php",
+		"/C/Users/Valtinho/Projects/blog/composer.json",
+		"/C/Users/Valtinho/Projects/blog/public/js/post.js",
+		"/C/Users/Valtinho/Projects/blog/config/database.php",
+		"/C/Users/Valtinho/Projects/blog/config/auth.php",
+		"/C/Users/Valtinho/Projects/blog/.env",
+		"/C/Users/Valtinho/Projects/blog/.env.example",
+		"/C/Users/Valtinho/Projects/blog/vendor/laravel/framework/src/Illuminate/Auth/EloquentUserProvider.php",
+		"/C/Users/Valtinho/Projects/blog/app/Post.php",
+		"/C/Users/Valtinho/Projects/blog/bootstrap/app.php",
+		"/C/Users/Valtinho/Projects/blog/resources/views/pages/index.blade.php",
+		"/C/Users/Valtinho/Projects/blog/app/Http/Controllers/HomeController.ant.php",
+		"/C/Users/Valtinho/Projects/blog/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php",
+		"/C/Users/Valtinho/Projects/blog/app/User.php",
+		"/C/Users/Valtinho/Projects/blog/app/Http/Controllers/Auth/AuthController.php",
+		"/C/Users/Valtinho/OneDrive/Documents/challenge.txt",
+		"/C/Users/Valtinho/Projects/blog/public/js/app.js",
+		"/C/Users/Valtinho/Projects/blog/vendor/laravel/framework/src/Illuminate/Auth/SessionGuard.php",
+		"/C/Users/Valtinho/Projects/blog/resources/views/layouts/app.ant.blade.php",
+		"/C/Users/Valtinho/Projects/blog/resources/views/home.blade.php",
+		"/C/Users/Valtinho/Projects/blog/gulpfile.js",
+		"/C/Users/Valtinho/Projects/blog/package.json",
+		"/C/Users/Valtinho/Projects/blog/resources/assets/js/app.hs",
+		"/C/Users/Valtinho/Projects/blog/resources/assets/js/app.js",
 		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/Users/Valtinho/Homestead/src/stubs/Homestead.yaml",
 		"/C/Users/Valtinho/.homestead/Homestead.yaml",
 		"/C/RepositorioLocal/github/valterjunior.github.io/index.html",
 		"/C/RepositorioLocal/github/valterjunior.github.io/assets/js/main.js",
@@ -73,6 +235,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"commentText",
+			"laravelcollective",
 			".js",
 			"contact-modal",
 			"contact me",
@@ -106,8 +270,280 @@
 	"groups":
 	[
 		{
+			"selected": 8,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "resources/views/layouts/menu_app.blade.php",
+					"settings":
+					{
+						"buffer_size": 1630,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1012,
+								1012
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/Http/Controllers/HomeController.php",
+					"settings":
+					{
+						"buffer_size": 1618,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								917,
+								917
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/Providers/AppServiceProvider.php",
+					"settings":
+					{
+						"buffer_size": 1012,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								982,
+								982
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/Http/routes.php",
+					"settings":
+					{
+						"buffer_size": 607,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								505,
+								505
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/Models/Post.php",
+					"settings":
+					{
+						"buffer_size": 1028,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								326,
+								339
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/Models/Tag.php",
+					"settings":
+					{
+						"buffer_size": 229,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "resources/views/home/index.blade.php",
+					"settings":
+					{
+						"buffer_size": 1565,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								356,
+								365
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "resources/views/layouts/main.blade.php",
+					"settings":
+					{
+						"buffer_size": 2256,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1536,
+								1536
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/C/Users/Valtinho/Desktop/mongodb.txt",
+					"settings":
+					{
+						"buffer_size": 25,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								25,
+								25
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "public/css/dashboard.css",
+					"settings":
+					{
+						"buffer_size": 1824,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1822,
+								1822
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 903.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -117,7 +553,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{
@@ -167,6 +603,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 460.0,
 	"status_bar_visible": true
 }

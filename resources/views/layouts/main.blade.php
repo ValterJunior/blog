@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
     <link rel="stylesheet" type="text/css" href="{{url('css/app.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url('css/dashboard.css')}}" />
 
     @yield('scripts_header')
 
@@ -45,7 +46,7 @@
             <span class="icon-bar"></span>
           </button>
 
-          <a class="navbar-brand" href="{{ url('/') }}">Awesome Blog!</a> <div class="develop hidden-xs">Developed by <a href="https://valterjunior.github.io" target="_blank">Valter Oliveira</a></div>
+          <a class="navbar-brand" href="{{ action('HomeController@index') }}">Awesome Blog!</a> <div class="develop hidden-xs">Developed by <a href="https://valterjunior.github.io" target="_blank">Valter Oliveira</a></div>
 
 
         </div>
@@ -62,7 +63,7 @@
 
       <div class="row">
 
-         <div class="col-sm-3 col-md-2 sidebar">
+         <div class="col-sm-3 col-md-2">
             @yield('left-menu')
          </div>
 
