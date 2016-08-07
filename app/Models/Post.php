@@ -12,7 +12,9 @@ class Post extends Moloquent
 	'title',
 	'content',
 	'user_id',
-	'created_at'
+	'created_at',
+	'month',
+	'year',
 	];
 
 	public function user(){
@@ -27,13 +29,32 @@ class Post extends Moloquent
 		return $this->hasMany(Comment::class);
 	}
 
-    // Deleting related tables
     protected static function boot() {
     
         parent::boot();
 
+ 		// Saving the month/year data to optimize searches!
+ 		static::creating(function ($post) {
+            
+            $post->month = date('n');
+            $post->year  = date('Y');
+
+        });        
+
+	    // Deleting related tables!
         static::deleting( function($post) {
-	         $post->comments()->delete();
+
+			$post->comments()->delete();
+
+ 			// Deleting tags when there is no more posts related!
+ 			foreach ($post->tags as $tag) {
+
+ 				if( $tag->posts->count() <= 1 ){
+	                $tag->delete();
+ 				}
+
+            }
+
         });
 
     }	

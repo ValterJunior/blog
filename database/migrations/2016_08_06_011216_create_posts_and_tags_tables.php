@@ -25,8 +25,10 @@ class CreatePostsAndTagsTables extends Migration
 
             $table->string('title');
             $table->string('content');
+            $table->integer('month');
+            $table->integer('year');
 
-            $table->unique('id');
+            $table->unique('_id');
             $table->index('user_id');
 
             $table->timestamps();
@@ -36,7 +38,7 @@ class CreatePostsAndTagsTables extends Migration
        Schema::create('tags', function (Blueprint $table) {
 
             $table->unique('_id');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->index('post_id');
 
         });

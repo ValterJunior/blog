@@ -1,76 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Awesome Blog!</title>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
+    <title>Awesome Blog!</title>
 
-  <link rel="stylesheet" type="text/css" href="{{url('css/app.css')}}" />
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
-  @yield('scripts_header')
+    <link rel="stylesheet" type="text/css" href="{{url('css/app.css')}}" />
 
-  <style>
+    @yield('scripts_header')
 
-      body {
-         font-family: 'Lato';
-      }
+    <style>
 
-      .fa-btn {
-         margin-right: 6px;
-      }
+        body {
+           font-family: 'Lato';
+        }
 
-   </style>
+        .fa-btn {
+           margin-right: 6px;
+        }
 
-</head>
+     </style>
 
-<body id="app-layout">
-  <nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
-      <div class="navbar-header">
+  </head>
 
-        <!-- Collapsed Hamburger -->
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-          <span class="sr-only">Toggle Navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-       </button>
+  <body id="app-layout">
 
-       <!-- Branding Image -->
-       <a class="navbar-brand" href="{{ url('/') }}">
-        Awesome Blog!
-     </a>
-  </div>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
 
-  <div class="collapse navbar-collapse" id="app-navbar-collapse">
-   @yield('top-menu')
-</div>
+      <div class="container-fluid">
 
-</div>
-</nav>
+        <div class="navbar-header">
 
-<div class="container">
- <div class="row">
-   <div class="col-md-2">
-      @yield('left-menu')
-   </div>
-   <div class="col-md-8">
-      @yield('content')
-   </div>
-   <div class="col-md-2"></div>
- </div>
-</div>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
 
-</div>
+          <a class="navbar-brand" href="{{ url('/') }}">Awesome Blog!</a> <div class="develop hidden-xs">Developed by <a href="https://valterjunior.github.io">Valter Oliveira</a></div>
 
-<script src="{{ url('js/app.js')}}"></script>
-@yield('scripts_footer')
 
-</body>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          @yield('top-menu-right')
+        </div>
+
+      </div>
+
+    </nav>
+
+    <div class="container" style="margin-top:20px;">
+
+      <div class="row">
+
+         <div class="col-sm-3 col-md-2 sidebar">
+            @yield('left-menu')
+         </div>
+
+         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+            <h1 class="page-header">Awesome Blog!</h1>
+
+            <div class="row">
+              @yield('content')
+            </div>
+
+         </div>
+
+      </div>
+
+    </div>
+
+    <script src="{{ url('js/app.js')}}"></script>
+
+    @yield('scripts_footer')
+
+  </body>
+
 </html>

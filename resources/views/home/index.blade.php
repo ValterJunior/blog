@@ -50,10 +50,21 @@
 		@endforeach
 
 	@else
-		<h4>There are no Posts yet</h4>
-		@if(!Auth::guest())
-			@include('home.partials._create_link', [ "buttonText" => "Start your first Post"])
-		@endif
+
+		<div class="row">
+
+			<div class="col-md-12">
+
+				<h4>There are no Posts yet</h4>
+				
+				@if(!Auth::guest())
+					@include('home.partials._create_link', [ "buttonText" => "Start your first Post"])
+				@endif
+
+			</div>
+
+		</div>
+		
 	@endif
 
 @endsection

@@ -13,7 +13,8 @@
 
 Route::auth();
 
-Route::get('/', 'HomeController@index');
+Route::get('/{filterTo?}', 'HomeController@index');
+// Route::get('/', 'HomeController@index');
 Route::post('/comments', 'CommentsController@store');
 
 Route::resource('posts', 'PostsController');
