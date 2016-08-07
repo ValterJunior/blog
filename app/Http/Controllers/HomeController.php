@@ -73,7 +73,7 @@ class HomeController extends Controller
      * Retrieving all posts filtering by mont/year,  ordering by created_at
      * @return \App\Models\Post
      */
-    private function getPostsByDate( int $month, int $year ){
+    private function getPostsByDate( string $month, string $year ){
 
         // For any freaking reason this relationship is not working, at all! 
         $posts = Post::where( 'month', $month )
