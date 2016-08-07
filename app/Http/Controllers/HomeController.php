@@ -59,22 +59,11 @@ class HomeController extends Controller
      */
     private function getPostsByTag( string $tagId ){
 
-        // For any freaking reason this relationship is not working, at all! 
-        // $posts = Tag::find($tagId)
-        //             ->posts()
-        //             ->orderBy('created_at', 'desc')->get();
+        $posts = Tag::find($tagId)
+                    ->posts()
+                    ->orderBy('created_at', 'desc')->paginate(5);
 
-        // Improvising!
-        $posts = $this->getAllPosts();
-
-        return $posts->filter( function($post) use($tagId){
-
-            $list = $post->tags()->lists('_id')->toArray();
-            // Log::info($list);
-
-            return isset($list) && in_array($tagId, $list);
-
-        });
+        return $posts;
 
     }
 
@@ -85,17 +74,19 @@ class HomeController extends Controller
     private function getPostsByDate( int $month, int $year ){
 
         // For any freaking reason this relationship is not working, at all! 
-        // $posts = Post::where( 'month', $month )
-        //              ->where('year', $year)
-        //              ->orderBy('created_at', 'desc')
-        //              ->get();
+        $posts = Post::where( 'month', $month )
+                     ->where('year', $year)
+                     ->orderBy('created_at', 'desc')
+                     ->paginate(5);
+
+        return $posts;
 
         // Improvising !
-        $posts = $this->getAllPosts();
+        // $posts = $this->getAllPosts();
 
-        return $posts->filter( function($post) use($month, $year) {
-            return ($post->month == $month && $post->year == $year );
-        });
+        // return $posts->filter( function($post) use($month, $year) {
+        //     return ($post->month == $month && $post->year == $year );
+        // });
 
     }
 
@@ -108,7 +99,7 @@ class HomeController extends Controller
         $posts = Post::where( 'title', 'like', '%' . $search . '%' )
                     ->orWhere( 'content', 'like', '%' . $search . '%' )
                     ->orderBy('created_at', 'desc')
-                    ->get();
+                    ->paginate(5);
 
         return $posts;
 
