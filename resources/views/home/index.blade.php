@@ -24,7 +24,7 @@
 
 		<?php $MAX_LENGTH  = 2000; ?>
 
-		{{ $posts->links() }}
+		{{ $posts ? $posts->links() : "" }}
 		
 		@foreach ($posts as $post)
 
@@ -59,7 +59,7 @@
 
 		@endforeach
 
-		{{ $posts->links() }}
+		{{ $posts ? $posts->links() : "" }}
 
 	@else
 
