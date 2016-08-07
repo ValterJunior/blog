@@ -45,7 +45,7 @@
             <span class="icon-bar"></span>
           </button>
 
-          <a class="navbar-brand" href="{{ url('/') }}">Awesome Blog!</a> <div class="develop hidden-xs">Developed by <a href="https://valterjunior.github.io">Valter Oliveira</a></div>
+          <a class="navbar-brand" href="{{ url('/') }}">Awesome Blog!</a> <div class="develop hidden-xs">Developed by <a href="https://valterjunior.github.io" target="_blank">Valter Oliveira</a></div>
 
 
         </div>
