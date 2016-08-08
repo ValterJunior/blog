@@ -13,7 +13,9 @@
          @if( $_menu_tags->count() > 0 )
 
             @foreach( $_menu_tags as $tag )
-               <li><a href="{{action('HomeController@index', [ '' => '', 'type' => 't', 'search' => $tag->id]) }}">{{ ucfirst($tag->name) }}</a></li>
+               <li class="{{ app('request')->input('search') === $tag->id ? 'active' : '' }}">
+                  <a href="{{action('HomeController@index', [ '' => '', 'type' => 't', 'search' => $tag->id]) }}">{{ ucfirst($tag->name) }}</a>
+               </li>
             @endforeach
 
          @else
@@ -31,7 +33,9 @@
          @if( $_menu_archives->count() > 0 )
 
             @foreach( $_menu_archives as $archive )
-               <li><a href="{{ action('HomeController@index', [ '' => '', 'type' => 'a', 'search' => $archive->month, 'year' => $archive->year ]) }}">{{ DateTime::createFromFormat('!m', $archive->month)->format('F') . ', ' . $archive->year }}</a></li>
+               <li class="{{ app('request')->input('search') === $archive->month && app('request')->input('year') === $archive->year ? 'active' : '' }}" >
+                  <a href="{{ action('HomeController@index', [ '' => '', 'type' => 'a', 'search' => $archive->month, 'year' => $archive->year ]) }}">{{ DateTime::createFromFormat('!m', $archive->month)->format('F') . ', ' . $archive->year }}</a>
+               </li>
             @endforeach
 
          @else
